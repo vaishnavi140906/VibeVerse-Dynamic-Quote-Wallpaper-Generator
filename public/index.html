@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7fc">
+  <meta name="description" content="Discover inspiring quotes and beautiful wallpapers with VibeVerse.">
+  <title>VibeVerse | Quotes, Colours & Good Vibes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="colour-blob blob-pink"></div>
+  <div class="colour-blob blob-blue"></div>
+  <div class="colour-blob blob-yellow"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-icon">✳</span>
+      <span>vibe<span class="brand-gradient">verse</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#generator">Discover</a>
+      <a href="#favorites">Favourites <span id="navFavoriteCount">0</span></a>
+      <a href="#history">History</a>
+    </nav>
+
+    <a href="#generator" class="nav-button">Find your vibe <span>↗</span></a>
+  </header>
+
+  <main id="home">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span>✦</span> YOUR LITTLE CORNER OF INSPIRATION
+        </div>
+
+        <h1>
+          A little colour.<br>
+          <span class="gradient-heading">A lot of feeling.</span>
+        </h1>
+
+        <p class="hero-description">
+          Discover words that touch your heart and wallpapers that
+          brighten your world. Find a vibe that feels like YOU.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#generator" class="primary-button">
+            ✨ Discover your vibe <span>↗</span>
+          </a>
+          <span class="hero-note">♡ Made for your mood</span>
+        </div>
+
+        <div class="feature-pills">
+          <span class="pill pill-pink">♡ Save favourites</span>
+          <span class="pill pill-purple">✦ Daily inspiration</span>
+          <span class="pill pill-blue">◈ Beautiful wallpapers</span>
+        </div>
+      </div>
+
+      <!-- Decorative artwork -->
+      <div class="hero-art" aria-label="Colourful inspiration artwork">
+        <div class="art-circle circle-one"></div>
+        <div class="art-circle circle-two"></div>
+        <div class="art-circle circle-three"></div>
+
+        <span class="floating-star star-one">✦</span>
+        <span class="floating-star star-two">✧</span>
+        <span class="floating-star star-three">✳</span>
+
+        <div class="art-card">
+          <div class="art-card-top">
+            <span class="online-dot"></span>
+            A LITTLE REMINDER
+            <span>✧</span>
+          </div>
+
+          <div class="art-quote">“</div>
+          <p>Make today<br>feel magical.</p>
+
+          <div class="art-card-bottom">
+            <span>YOUR STORY</span>
+            <span>♥ 001</span>
+          </div>
+        </div>
+
+        <div class="floating-label label-top">🌈 Good energy</div>
+        <div class="floating-label label-bottom">✨ Keep shining</div>
+      </div>
+    </section>
+
+    <!-- Quote and wallpaper generator -->
+    <section class="generator-section" id="generator">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">✧ YOUR MOMENT OF MAGIC</span>
+          <h2>Find your <span class="gradient-heading">inspiration.</span></h2>
+          <p class="section-description">
+            Every click brings a fresh quote, a new view, a new feeling.
+          </p>
+        </div>
+
+        <span class="section-badge">☀️ GOOD VIBES ONLY</span>
+      </div>
+
+      <article class="wallpaper-card" id="wallpaperCard">
+        <div class="wallpaper-overlay"></div>
+
+        <div class="wallpaper-top">
+          <span class="image-label">
+            <span class="image-dot"></span>
+            YOUR INSPIRATION CANVAS
+          </span>
+
+          <button
+            class="heart-button"
+            id="favoriteButton"
+            type="button"
+            aria-label="Save to favourites"
+            title="Save to favourites">♡</button>
+        </div>
+
+        <div class="wallpaper-content" id="wallpaperContent">
+          <div class="quote-mark">“</div>
+          <blockquote id="quoteText">
+            Your only limit is your mind.
+          </blockquote>
+          <p class="quote-author" id="quoteAuthor">— Unknown</p>
+          <div class="quote-underline"></div>
+          <p class="quote-caption">
+            Take a breath. Believe in yourself. Begin again.
+          </p>
+        </div>
+
+        <div class="wallpaper-bottom">
+          <span>✦ A NEW VIEW, A NEW YOU</span>
+          <span id="generatedTime">READY TO INSPIRE</span>
+        </div>
+      </article>
+
+      <!-- Actions -->
+      <div class="action-buttons">
+        <button class="primary-button generate-button" id="generateButton">
+          <span>✦</span> Generate new vibe <span class="button-arrow">↗</span>
+        </button>
+
+        <button class="secondary-button" id="copyButton">
+          <span>▣</span> Copy quote
+        </button>
+
+        <button class="secondary-button" id="shareButton">
+          <span>↗</span> Share
+        </button>
+
+        <button class="secondary-button" id="wallpaperButton">
+          <span>↓</span> Get wallpaper
+        </button>
+      </div>
+
+      <p class="status-message" id="statusMessage" role="status" aria-live="polite"></p>
+      <!-- WALLPAPER DESIGNER -->
+      <section class="wallpaper-designer" id="wallpaperDesigner">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">✦ MAKE IT YOURS</span>
+            <h2>Your quote, <span class="gradient-heading">your canvas.</span></h2>
+            <p class="section-description">
+              Turn your favourite vibe into a beautiful desktop wallpaper.
+            </p>
+          </div>
+          <span class="section-badge">1920 × 1080 HD</span>
+        </div>
+
+        <div class="designer-controls">
+          <div class="designer-field">
+            <label for="wallpaperFont">Quote font</label>
+            <select id="wallpaperFont">
+              <option value="Playfair Display">Elegant</option>
+              <option value="DM Sans">Modern</option>
+              <option value="Georgia">Classic</option>
+            </select>
+          </div>
+
+          <div class="designer-field">
+            <label for="wallpaperPosition">Quote position</label>
+            <select id="wallpaperPosition">
+              <option value="center">Center</option>
+              <option value="bottom">Bottom</option>
+              <option value="left">Left</option>
+            </select>
+          </div>
+
+          <button type="button" class="primary-button" id="previewWallpaperButton">
+            ✨ Update Preview
+          </button>
+        </div>
+
+        <div class="wallpaper-preview-frame">
+          <canvas
+            id="wallpaperPreview"
+            width="1920"
+            height="1080"
+            role="img"
+            aria-label="Preview of your desktop quote wallpaper"
+          ></canvas>
+          <p id="wallpaperPreviewMessage" role="status" aria-live="polite">
+            Generate a vibe first, then create your wallpaper.
+          </p>
+        </div>
+
+        <div class="designer-footer">
+          <p>♡ Made from your current quote and wallpaper background.</p>
+          <button
+            type="button"
+            class="primary-button"
+            id="downloadWallpaperButton"
+          >
+            ↓ Download Desktop Wallpaper
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- Favourites -->
+    <section class="collection-section" id="favorites">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">♡ YOUR LITTLE COLLECTION</span>
+          <h2>Things you <span class="gradient-heading">love.</span></h2>
+          <p class="section-description">
+            Keep the quotes that make you feel something.
+          </p>
+        </div>
+
+        <span class="section-badge" id="favoriteCount">0 SAVED</span>
+      </div>
+
+      <div class="favorites-grid" id="favoritesList">
+        <div class="empty-state">
+          <span class="empty-icon">♡</span>
+          <h3>Your favourites live here!</h3>
+          <p>Tap the heart on any quote to save a little inspiration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- History -->
+    <section class="collection-section history-section" id="history">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">✦ YOUR JOURNEY SO FAR</span>
+          <h2>Recently <span class="gradient-heading">discovered.</span></h2>
+          <p class="section-description">
+            Revisit the words and vibes you found along the way.
+          </p>
+        </div>
+
+        <button class="text-button" id="clearHistoryButton">
+          Clear history ↗
+        </button>
+      </div>
+
+      <div class="history-list" id="historyList">
+        <div class="empty-state">
+          Your discoveries will appear here after you generate a vibe.
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing banner -->
+    <section class="closing-banner">
+      <div>
+        <span class="closing-sparkle">✦ ✧ ✦</span>
+        <h2>Your life deserves a little more colour.</h2>
+        <p>Keep the words that inspire you. Keep becoming you.</p>
+      </div>
+      <a href="#generator" class="closing-button">Find another vibe ↗</a>
+    </section>
+
+  </main>
+
+  <!-- VIBEVERSE ACCOUNT SECTION -->
+<section class="account-panel" id="accountPanel">
+  <div class="account-heading">
+    <span class="account-icon">💖</span>
+    <div>
+      <h2>Your VibeVerse Account</h2>
+      <p>Save your inspiration and make it personal.</p>
+    </div>
+  </div>
+
+  <form id="authForm">
+    <div id="nameField" class="auth-field">
+      <label for="authName">Full name</label>
+      <input id="authName" type="text" placeholder="Enter your name"
+        autocomplete="name" minlength="2" maxlength="60">
+    </div>
+
+    <div class="auth-field">
+      <label for="authEmail">Email address</label>
+      <input id="authEmail" type="email" placeholder="you@example.com"
+        autocomplete="email" required>
+    </div>
+
+    <div id="phoneField" class="auth-field">
+      <label for="authPhone">Phone number (optional)</label>
+      <input id="authPhone" type="tel" placeholder="Enter phone number"
+        autocomplete="tel" maxlength="20">
+    </div>
+
+    <div class="auth-field">
+      <label for="authPassword">Password</label>
+      <input id="authPassword" type="password"
+        placeholder="At least 8 characters"
+        autocomplete="current-password" minlength="8"
+        maxlength="72" required>
+    </div>
+
+    <button class="primary-button" type="submit" id="authSubmit">
+      ✨ Create Account
+    </button>
+  </form>
+
+  <p id="authMessage" role="status" aria-live="polite"></p>
+
+  <button type="button" class="text-button" id="authModeButton">
+    Already have an account? Log in
+  </button>
+
+  <div id="loggedInPanel" hidden>
+    <p id="welcomeMessage"></p>
+    <button type="button" class="text-button" id="logoutButton">
+      Log out
+    </button>
+  </div>
+</section>
+
+<!-- QUOTE SEARCH SECTION -->
+<section class="search-panel" id="quoteSearch">
+  <div class="search-heading">
+    <span>🔎</span>
+    <div>
+      <h2>Find Your Vibe</h2>
+      <p>Search inspiration by quote, author, or topic.</p>
+    </div>
+  </div>
+
+  <form id="quoteSearchForm" class="search-form">
+    <input
+      id="quoteSearchInput"
+      type="search"
+      placeholder="Try motivation, happiness, Aristotle..."
+      minlength="2"
+      maxlength="100"
+      aria-label="Search quotes"
+      required
+    >
+    <button type="submit" class="primary-button">
+      Search ✨
+    </button>
+  </form>
+
+  <p id="searchMessage" role="status" aria-live="polite"></p>
+  <div id="searchResults" class="search-results"></div>
+</section>
+
+<!-- MOOD-BASED RECOMMENDATIONS -->
+<section class="vibe-extra-section" id="moodRecommendations">
+  <div class="vibe-extra-heading">
+    <span class="vibe-eyebrow">✦ YOUR FEELINGS MATTER</span>
+    <h2>How are you feeling <span>today?</span></h2>
+    <p>Choose your mood and discover words that connect with you.</p>
+  </div>
+
+  <div class="mood-options">
+    <button type="button" class="mood-option active" data-mood="happy">😊 Happy</button>
+    <button type="button" class="mood-option" data-mood="sad">💙 Sad</button>
+    <button type="button" class="mood-option" data-mood="stressed">🌿 Stressed</button>
+    <button type="button" class="mood-option" data-mood="motivated">🔥 Motivated</button>
+    <button type="button" class="mood-option" data-mood="peaceful">🌙 Peaceful</button>
+  </div>
+
+  <div id="moodQuoteResults" class="mood-quote-results" aria-live="polite"></div>
+  <p id="moodMessage" class="journal-message" role="status"></p>
+</section>
+
+<!-- PERSONAL QUOTE JOURNAL -->
+<section class="vibe-extra-section" id="personalJournal">
+  <div class="vibe-extra-heading">
+    <span class="vibe-eyebrow">✦ YOUR PRIVATE SPACE</span>
+    <h2>My personal <span>journal.</span></h2>
+    <p>Save your thoughts, connect them with a quote, and revisit your journey.</p>
+  </div>
+
+  <form id="journalForm" class="journal-form">
+    <label for="journalTitle">Entry title</label>
+    <input
+      id="journalTitle"
+      type="text"
+      maxlength="100"
+      placeholder="A little moment in my life..."
+      required
+    />
+
+    <label for="journalReflection">Your thoughts</label>
+    <textarea
+      id="journalReflection"
+      rows="5"
+      maxlength="3000"
+      placeholder="Write anything you want to remember..."
+      required
+    ></textarea>
+
+    <label for="journalQuote">Quote to remember (optional)</label>
+    <textarea
+      id="journalQuote"
+      rows="2"
+      maxlength="500"
+      placeholder="Add a quote that means something to you..."
+    ></textarea>
+
+    <label for="journalAuthor">Quote author (optional)</label>
+    <input
+      id="journalAuthor"
+      type="text"
+      maxlength="100"
+      placeholder="Author's name"
+    />
+
+    <button type="submit" class="primary-button" id="saveJournalButton">
+      ♡ Save Journal Entry
+    </button>
+    <p id="journalMessage" class="journal-message" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="journal-list-heading">
+    <h3>My saved memories ✨</h3>
+    <button type="button" class="journal-refresh-button" id="refreshJournalButton">
+      ↻ Refresh
+    </button>
+  </div>
+
+  <div id="journalEntries" class="journal-entries" aria-live="polite">
+    <p>Log in to view your saved journal entries.</p>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">✳</span>
+      <span>vibe<span class="brand-gradient">verse</span></span>
+    </a>
+
+    <p>Made with colour, words & a little wonder. 💖</p>
+    <span class="footer-tagline">FIND YOUR FEELING. FRAME YOUR WORLD.</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
